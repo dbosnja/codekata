@@ -5,7 +5,6 @@ from time import time
 
 
 def time_me(func):
-<<<<<<< HEAD
 	@wraps(func)
 	def wrapper_closure(*args, **kwargs):
 		start_time = time()
