@@ -6,7 +6,7 @@ from helpers import time_me
 # 1. classic iterative approach
 def binary_chop(int_target, int_list):
 	""" does a binary search on a list and 
-		returns index of targeted_element 
+		returns index of the targeted element 
 		from the list or -1 if not found
 
 	:rtype: int"""
@@ -29,4 +29,7 @@ def binary_chop(int_target, int_list):
 
 # generation without tests:
 
-print(binary_chop(55, [i for i in xrange(1, 1000000000)]))
+print(binary_chop(55, 'a_list'))
+print(binary_chop(55, []))
+print(binary_chop(55, [i for i in xrange(1, 1000000)]))
+
