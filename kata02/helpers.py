@@ -10,7 +10,8 @@ def time_me(func):
 		start_time = time()
 		func_res = func(*args, **kwargs)
 		end_time = time()
-		print("{}'s funning time: {:0.4e} s".format(wrapper_closure.__name__, end_time - start_time))
+		print("{}'s running time: {:0.4e} s".format(wrapper_closure.__name__,
+													end_time - start_time))
 		return func_res
 	return wrapper_closure
 
