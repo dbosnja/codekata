@@ -5,9 +5,9 @@ from __future__ import print_function
 from helpers import time_me
 
 
-# 1. approach:   classic iterative 
+# 1. approach:   classic iterative - indices - carry_on
 @time_me
-def binary_chop(int_target, int_list):
+def binary_chop_ind(int_target, int_list):
 	""" does a binary search on a list and 
 		returns index of the targeted element 
 		from the list or -1 if not found
@@ -38,10 +38,11 @@ def binary_chop(int_target, int_list):
 
 # generation without tests:
 
-#print(binary_chop(55, 'a_list'))
-#print(binary_chop(55, []))
-#print(binary_chop(999, [i for i in xrange(1, 2 ** 20)]))
-#print(binary_chop(7, [1, 3, 5, 7]))
+#print(binary_chop_ind(55, 'a_list'))
+#print(binary_chop_ind(55, []))
+#print(binary_chop_ind(2, [1, 2]))
+#print(binary_chop_ind(999, [i for i in xrange(1, 2 ** 20)]))
+#print(binary_chop_ind(7, [1, 3, 5, 7]))
 
 
 # 2. approach:    binary_chop - recursive edition
@@ -78,7 +79,7 @@ def binary_chop_rec(int_target, int_list):
 	
 #print(binary_chop_rec(55, 'a_list'))
 #print(binary_chop_rec(55, []))
-#print(binary_chop_rec(2, [1, 2]))
+#print(binary_chop_rec(1, [1, 2]))
 #print(binary_chop_rec(999, [i for i in xrange(1, 2 ** 20)]))
 
 
@@ -120,8 +121,8 @@ def binary_chop_rec_indices(int_target, int_list, start_index=0, end_index=0):
 		return  binary_chop_rec_indices(int_target, int_list, 
 										start_index, arithmetic_mean - 1)
 	
-#print(binary_chop_rec(55, 'a_list'))
-#print(binary_chop_rec(55, []))
-#print(binary_chop_rec(2, [1, 2]))
-print(binary_chop_rec(999, [i for i in xrange(1, 2 ** 20)]))
+#print(binary_chop_rec_indices(55, 'a_list'))
+#print(binary_chop_rec_indices(55, []))
+#print(binary_chop_rec_indices(2, [1, 2]))
+#print(binary_chop_rec_indices(999, [i for i in xrange(1, 2 ** 20)]))
 
