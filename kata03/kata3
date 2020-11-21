@@ -1,6 +1,7 @@
 How big?
 
-    • 1000 – takes 10 bits. 2^(10)=1024 > 1000. Therefore the biggest exponent to represent decimal 1000 we need is 9. 1st bit is ‘indexed’ with 0. Therefore 10 bits in total.
+    • 1000 – takes 10 bits. 2^(10)=1024 > 1000. Therefore the biggest exponent to represent decimal 1000 we need is 9. 1st bit is ‘indexed’ with 0. 
+    Therefore 10 bits in total.
     • 10^6 < 2^(10)*2^(10) = 2^(20). 20 bits according to above mentioned reasoning.
     • 10^9 < 2^(10)*2^(20)= 2^(30). 30 bits 
     • 10^12 < 2^(20)*2^(20)= 2^(40). 40 bits 
@@ -8,8 +9,10 @@ How big?
 
 20k residence should map to names, addresses and phone numbers.
 
-    • Names = 2*10^4*p_name*60. Where p_name is a coefficient which approximate the ratio of different names in a random set of 20k people. 60 represents fixed size in characters for every unique name
-    • addresses = 2*10^4*p_address*100. Where p_address is a coefficient which approximate the ratio of different street names in a random city of 20k people. 100 represents fixed size in characters for every unique address
+    • Names = 2*10^4*p_name*60. Where p_name is a coefficient which approximate the ratio of different names in a random set of 20k people. 
+    60 represents fixed size in characters for every unique name
+    • addresses = 2*10^4*p_address*100. Where p_address is a coefficient which approximate the ratio of different street names in a random city of 20k people. 
+    100 represents fixed size in characters for every unique address
     • phone numbers = let’s assume it’s 1:1 mapping. Therefore 20k*20character so save a unique cell number
 
 10^6 integers storing in a binary tree:
@@ -21,4 +24,15 @@ How big?
 
 How fast?
 
-    • We can first see how much should the program slow down due to the increase of elements according to binary chop complexity( O(n)=log(n) ) For example, we start with 10^4 of elements and in next iteration with 10^5 of elements. The complexity for the first case is log(10^4) and for the latter log(10^5). Therefore the ratio log(10^5)/log(10^4) = 1.25. According to author he timed 6mS/4.5mS = 1.33mS ratio which is relatively in compliance to theoretical complexity. Following the theoretical ratio we expect for the program to run around log(10^7)/log(10^4) = 1.75 longer when comparing with the complexity with 10^4 elements. Therefore 7.875mS. If we follow the author’s ratio we end up at around 10.67mS
+    • We can first see how much should the program slow down due to the increase of elements according to binary chop complexity( O(n)=log(n) ) 
+    For example, we start with 10^4 of elements and in next iteration with 10^5 of elements. The complexity for the first case is log(10^4) and for the latter log(10^5). 
+    Therefore the ratio log(10^5)/log(10^4) = 1.25. According to author he timed 6mS/4.5mS = 1.33mS ratio which is relatively in compliance to theoretical complexity. 
+    Following the theoretical ratio we expect for the program to run around log(10^7)/log(10^4) = 1.75 longer when comparing with the complexity with 10^4 elements. 
+    Therefore 7.875mS. If we follow the author’s ratio we end up at around 10.67mS
+    
+    
+  Hashin strings:
+  
+  This is not a viable approach. At least not in our lifetime. given the circumstances we conclude there's 96^(16) possible combinations
+  of 'clean passwords'. In this approach we are brute-forcing and hashing each password which then requires around 96^(16)mS in total. Which is around
+  1.650e+21 years.
